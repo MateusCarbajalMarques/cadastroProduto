@@ -17,13 +17,13 @@ export class Produtos {
     descricao:string;
 
     @Column()
-    codicgo_barra:Number;
+    codigo_barra:Number;
 
     @Column()
     preco:number
 
     @Column()
-    categoria: string;
+    categoria_id: string;
 
     @CreateDateColumn()
     created_at: Date;

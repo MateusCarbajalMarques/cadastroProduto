@@ -18,7 +18,7 @@ export class Produtos1639845493579 implements MigrationInterface {
                 {
                     name:"nome",
                     type: "varchar",
-                    isUnique: true
+                    
                 },
                 {
                     name: "descricao",
@@ -28,24 +28,30 @@ export class Produtos1639845493579 implements MigrationInterface {
                 {
                     name: "codigo_barra",
                     type: "numeric",
-
+                    isUnique: true
                 },
                 {
                     name: "preco",
                     type: "numeric",
 
                 },
-                {
-                    name: "categoria",
-                    type: "varchar",
-
-                },
+            
                 {
                     name: "created_at",
                     type:"timestamp",
                     default:"now()"
                 }
             ],
+
+            foreignKeys:[
+                {
+                    name:"fk_produtos_categoria",
+                    columnNames:["categoria_id"],
+                    referencedTableName:"categorias",
+                    referencedColumnNames: ["id"]
+                }
+            ]
+       
 
         })
         )
